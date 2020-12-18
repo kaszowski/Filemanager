@@ -1,0 +1,12 @@
+{{#if this}}
+    <tr>
+        <td>{{this.id}}</td>
+        <td><img src="../../static/images/{{extension}}.jpg"></td>
+        <td>{{this.name}}</td>
+        <td>{{this.size}}</td>
+        <td>{{this.type}}</td>
+        <td><button type="submit" name="toDelete" value="{{this.id}}">delete</button></td>
+        <td><button type="submit" name="toInfo" value="{{this.id}}">info</button></td>
+        <td><button type="submit" name="toDownload" value="{{this.id}}">Download</button></td>
+    </tr>
+{{/if}}

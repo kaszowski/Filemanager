@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="menu">
+        <a href="upload">Upload</a>
+        <a href="filemanager">Filemanager</a>
+        <a href="info">Info</a>
+    </div>
+    <div class="sideBar">
+        {{mode}}
+    </div>
+    <div class="container">
+        {{#if multiupload}}
+        {{> form}}
+        {{/if}}
+        {{#if filemanager}}
+            {{#each FilesList}}
+                <form method="POST" action="filemanager">
+                    <table>
+                        {{> FilesListRow}}
+                    </table>
+                </form>
+            {{/each}}
+        {{/if}}
+        {{#if info}}
+            {{> info}}
+        {{/if}}
+    </div>
+</body>
+</html>
