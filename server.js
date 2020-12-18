@@ -10,6 +10,7 @@ var FileToView = false;
 
 function saveFilesData(files)
 {
+    console.log("One file up")
     if(files.imagetoupload instanceof Array) //parę plików
     {
         for(var i=0 ; i<files.imagetoupload.length; i++)
@@ -44,7 +45,6 @@ function saveFilesData(files)
         else data.extension = "unknown"
         FilesTable.push(data)
     }
-    console.log("One file done")
 }
 
 app.use(express.urlencoded());
