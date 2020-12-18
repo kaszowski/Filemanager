@@ -44,6 +44,7 @@ function saveFilesData(files)
         else data.extension = "unknown"
         FilesTable.push(data)
     }
+    console.log("One file done")
 }
 
 app.use(express.urlencoded());
