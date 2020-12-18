@@ -72,12 +72,9 @@ app.post('/upload', function (req, res) {
     form.uploadDir = __dirname + '/static/upload/'
     form.keepExtensions = true
     form.multiples = true 
-    var getData = function(callback){
-        form.parse(req, function (err, fields, files) { 
-            callback(files)
-        });
-    }
-    getData(saveFilesData)
+    form.parse(req, function (err, fields, files) { 
+        saveFilesData(files)
+    });
     var context = {multiupload: true, mode: "multiupload"}
     res.render("index.hbs", context)
 });
