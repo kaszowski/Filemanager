@@ -107,10 +107,11 @@ app.post("/filemanager", function(req, res){
 })
 
 app.get("/info", function(req, res){
+    console.log(FileToView)
     if(FileToView==false) res.redirect("/filemanager")
     else
     {
-        var context = {info: true, mode: "info", file: FilesTable[FileToView]}
+        var context = {info: true, mode: "info", file: FilesTable[FileToView-1]}
         res.render("index.hbs", context)
     }
 })
