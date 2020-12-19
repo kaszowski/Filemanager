@@ -70,7 +70,7 @@ app.get("/upload", function(req, res){
 
 app.post('/upload', function (req, res) {
     var form = new formidable.IncomingForm();
-    form.uploadDir = __dirname + '/static/upload/'
+    form.uploadDir = __dirname + '/static/upload'
     form.keepExtensions = true
     form.multiples = true 
     form.parse(req, function (err, fields, files) { 
