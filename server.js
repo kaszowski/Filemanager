@@ -75,10 +75,8 @@ app.post('/upload', function (req, res) {
     form.keepExtensions = true
     form.multiples = true 
     form.parse(req, function (err, fields, files) {
-        console.log(files)
-        console.log("Parse started")
         saveFilesData(files)
-        console.log("Callback Exited")
+        return 0
     });
     console.log("Form parse exited")
     /*var context = {multiupload: true, mode: "multiupload"}
