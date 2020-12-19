@@ -103,7 +103,7 @@ app.post("/filemanager", function(req, res){
     }
     if(req.body.toDownload)
     {
-        res.download(FilesTable[parseInt(req.body.toDownload)].path, function(err){
+        res.download(FilesTable[parseInt(req.body.toDownload)-1].path, function(err){
             console.log(err)
         })
     }
