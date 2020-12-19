@@ -75,7 +75,7 @@ app.post('/upload', function (req, res) {
     form.keepExtensions = true
     form.multiples = true 
     form.parse(req, function (err, fields, files) {
-        console.log(err)
+        console.log(files)
         console.log("Parse started")
         saveFilesData(files)
         console.log("Callback Exited")
