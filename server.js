@@ -75,9 +75,12 @@ app.post('/upload', function (req, res) {
     form.multiples = true 
     form.parse(req, function (err, fields, files) { 
         saveFilesData(files)
+        console.log("Callback Exited")
     });
-    var context = {multiupload: true, mode: "multiupload"}
-    res.render("index.hbs", context)
+    console.log("Form parse exited")
+    /*var context = {multiupload: true, mode: "multiupload"}
+    res.render("index.hbs", context)*/
+    res.redirect("/filemanager")
 });
 
 app.get("/filemanager", function(req, res){
