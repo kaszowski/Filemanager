@@ -74,7 +74,8 @@ app.post('/upload', function (req, res) {
     form.uploadDir = __dirname + '/static/upload'
     form.keepExtensions = true
     form.multiples = true 
-    form.parse(req, function (err, fields, files) { 
+    form.parse(req, function (err, fields, files) {
+        console.log("Parse started")
         saveFilesData(files)
         console.log("Callback Exited")
     });
